@@ -77,11 +77,13 @@ spec:
     container:
       image: "{{inputs.parameters.os-image}}"
       command: [sh, -c]
-      args: ["
+      args: [
+       "
         uname -a ;
         cat /etc/os-release ;
         /go/src/github.com/golang/example/hello/hello
-      "]
+       "
+       ]
       volumeMounts:
       - name: workdir
         mountPath: /go
